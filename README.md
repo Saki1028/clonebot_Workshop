@@ -5,3 +5,4 @@ Dependency:
 2. Dr. Rei Lee's [package](https://github.com/rei039474/Dynamixel_XL330_Servo_Library) to control dynamixel motors (XL330 series)
 
 Wifi information is in `wifi_info.h`
+Main file is `ConeBot_Control.ino`. Put the board in AP mode to host its own WiFi. 
