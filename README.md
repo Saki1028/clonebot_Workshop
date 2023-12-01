@@ -1,14 +1,14 @@
 A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/ConeBot)
 
-Parts:
-    Computation: esp32-cam
-    Motor Programmer: ROBOTIS U2D2 part
-    Motors: DYNAMIXEL XL330-M077-T motor
-    Wheels: omni wheels
-    Breadboards: mini breadboard sets
-    Power: power bank Anker 321
-    Cable: usbc-to-c cable
-    caster balls
+Parts://
+    Computation: esp32-cam//
+    Motor Programmer: ROBOTIS U2D2 part//
+    Motors: DYNAMIXEL XL330-M077-T motor//
+    Wheels: omni wheels//
+    Breadboards: mini breadboard sets//
+    Power: power bank Anker 321//
+    Cable: usbc-to-c cable//
+    caster balls//
 
 
 Dependency:
