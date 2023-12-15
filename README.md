@@ -1,6 +1,6 @@
 A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/ConeBot)
 
-Parts:
+# Parts:
 * Computation: esp32-cam
 * Motor Programmer: ROBOTIS U2D2 part
 * Motors: DYNAMIXEL XL330-M077-T motor
@@ -11,11 +11,11 @@ Parts:
 * caster balls
 
 
-Dependency:
+# Dependency:
 1. Arduino
 2. Dr. Rei Lee's [package](https://github.com/rei039474/Dynamixel_XL330_Servo_Library) to control dynamixel motors (XL330 series)
 
-Steps:
+# Steps:
 1. Download and install [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
 2. Connect computer to motors. Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery. Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another) 
