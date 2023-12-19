@@ -8,9 +8,8 @@
 #include "soc/rtc_cntl_reg.h"    // disable brownout problems
 #include "esp_http_server.h"
 #include <ESP32Servo.h>
-#include <SoftwareSerial.h>
+// #include <SoftwareSerial.h>
 #include "wifi_info.h"
-#include "webcam_pins.h"
 
 #include "esp_system.h" //This inclusion configures the peripherals in the ESP system.
 #include "esp_himem.h"
@@ -24,6 +23,10 @@ extern "C"
 #define ledPin      4
 #define liftyPin    15
 #define SERVO_STEP  5
+
+#define CAMERA_MODEL_AI_THINKER // Has PSRAM
+#include "webcam_pins.h"
+#include "camera_index.h"
 
 // Setting up servo motors with 2 dummy onesin the beginning
 Servo servoN1; //dummy
@@ -56,8 +59,8 @@ void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
   
   lifty.setPeriodHertz(50);    // standard 50 hz servo
-  servoN1.attach(2, 1000, 2000); //dummy setup
-  servoN2.attach(16, 1000, 2000); //dummy setup
+  // servoN1.attach(2, 1000, 2000); //dummy setup
+  // servoN2.attach(16, 1000, 2000); //dummy setup
   lifty.attach(liftyPin, 540, 2300);
   lifty.write(0);
   
@@ -80,21 +83,37 @@ void setup() {
   config.pin_pclk = PCLK_GPIO_NUM;
   config.pin_vsync = VSYNC_GPIO_NUM;
   config.pin_href = HREF_GPIO_NUM;
-  config.pin_sscb_sda = SIOD_GPIO_NUM;
-  config.pin_sscb_scl = SIOC_GPIO_NUM;
+  config.pin_sccb_sda = SIOD_GPIO_NUM;
+  config.pin_sccb_scl = SIOC_GPIO_NUM;
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  config.pixel_format = PIXFORMAT_JPEG; 
+  config.frame_size = FRAMESIZE_SVGA;
+  config.pixel_format = PIXFORMAT_JPEG; // for streaming
+  //config.pixel_format = PIXFORMAT_RGB565; // for face detection/recognition
+  config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
+  config.fb_location = CAMERA_FB_IN_PSRAM;
+  config.jpeg_quality = 12;
+  config.fb_count = 1;
   
-  if(psramFound()){
-    config.frame_size = FRAMESIZE_VGA;
-    config.jpeg_quality = 10;
-    config.fb_count = 2;
+  // if PSRAM IC present, init with UXGA resolution and higher JPEG quality
+  //                      for larger pre-allocated frame buffer.
+  if(config.pixel_format == PIXFORMAT_JPEG){
+    if(psramFound()){
+      config.jpeg_quality = 10;
+      config.fb_count = 2;
+      config.grab_mode = CAMERA_GRAB_LATEST;
+    } else {
+      // Limit the frame size when PSRAM is not available
+      config.frame_size = FRAMESIZE_SVGA;
+      config.fb_location = CAMERA_FB_IN_DRAM;
+    }
   } else {
-    config.frame_size = FRAMESIZE_SVGA;
-    config.jpeg_quality = 12;
-    config.fb_count = 1;
+    // Best option for face detection/recognition
+    config.frame_size = FRAMESIZE_240X240;
+#if CONFIG_IDF_TARGET_ESP32S3
+    config.fb_count = 2;
+#endif
   }
   
   esp_err_t err = esp_camera_init(&config);
@@ -114,7 +133,7 @@ void setup() {
 //  Serial.print("Camera Stream Ready! Go to: http://");
 //  Serial.println(WiFi.localIP());
   
-  //// WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password
+  // WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password
   Serial.print("Setting AP (Access Point)…");
   // Remove the password parameter, if you want the AP (Access Point) to be open
   WiFi.softAP(ssid, password);
@@ -124,7 +143,7 @@ void setup() {
   
   //// Start streaming web server
   startCameraServer();
-  // Blink LED once the server is up
+  // // Blink LED once the server is up
   pinMode(ledPin, OUTPUT);
   analogWrite(ledPin, 10);
   delay(300);
@@ -167,7 +186,7 @@ void loop() {
    delay(50);
 
 
-  //// Emergency Stop: losing wifi connection or no update for too long
+  // Emergency Stop: losing wifi connection or no update for too long
   if (WiFi.softAPgetStationNum() < 1){
     cmmd = 'c';
     lift = 'b';
