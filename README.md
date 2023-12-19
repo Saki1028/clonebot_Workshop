@@ -48,30 +48,31 @@ put in your wifi credentials
 const char* ssid = "REPLACE_WITH_YOUR_SSID";
 const char* password = "REPLACE_WITH_YOUR_PASSWORD";
 ```
-Uncomment this line `#define CAMERA_MODEL_AI_THINKER ` and comment out `//#define CAMERA_MODEL_ESP_EYE `
+Uncomment this line `#define CAMERA_MODEL_AI_THINKER ` 
+and comment out `//#define CAMERA_MODEL_ESP_EYE `
 
 hit the green arrow button on the left to upload the code to the microcontroller
 
 if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network.
 
-9. Download this repo and open the folder Conebot_Control in the Arduno IDE
+6. Download this repo and open the folder Conebot_Control in the Arduno IDE
 
 File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino
 
 You will also need the ESP32Servo library
-Sketch-->Include Library-->Type esp32 Servo and install it.
+Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.
 
 And the Dynamixel XL330 Arduino Library
 Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
 
-10. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
+7. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
 
-11. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
+8. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
   
-12. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
+9. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
 
-13. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
+10. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
 
-14. Prototype and build a superstructure
+11. Prototype and build a superstructure
 
-15. Done!
+12. Done!
