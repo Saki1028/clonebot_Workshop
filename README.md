@@ -12,8 +12,12 @@ A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/
 
 
 # Dependency:
-1. Arduino
+1. [Arduino IDE](https://www.arduino.cc/en/software)
 2. Dr. Rei Lee's [package](https://github.com/rei039474/Dynamixel_XL330_Servo_Library) to control dynamixel motors (XL330 series)
+Download by click code--> download ZIP
+unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
+
+4. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
 # Steps:
 1. Download and install [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
@@ -26,20 +30,45 @@ A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/
 - Control mode to PWM (not velocity or position).
 - Turn torque on and toggle the diagram to get it moving! You only have to do this once.
 
-5. Install the ESP32 library (from espressif) in the Arduino IDE
+4. Install the ESP32 Board (from espressif) in the Arduino IDE:
 
-6. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try CameraWebServer). https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/
+tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
 
-8. Download the Conebot code and open it in Arduno IDE
+This may take a moment
 
-9. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
+5. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
 
-10. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
+select the board by going to:
+tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM
+then select the port:
+tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.
+then go to File-->Examples-->ESP32-->Camera-->CameraWebServer
+put in your wifi credentials
+```
+const char* ssid = "REPLACE_WITH_YOUR_SSID";
+const char* password = "REPLACE_WITH_YOUR_PASSWORD";
+```
+Uncomment this line `#define CAMERA_MODEL_AI_THINKER ` and comment out `//#define CAMERA_MODEL_ESP_EYE `
+
+hit the green arrow button on the left to upload the code to the microcontroller
+
+if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network.
+
+9. Download this repo and open the folder Conebot_Control in the Arduno IDE
+
+File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino
+
+You will also need the ESP32Servo library
+Sketch-->Include Library-->Type esp32 Servo and install it.
+
+10. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
+
+11. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
   
-11. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
+12. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
 
-12. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
+13. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
 
-13. Prototype and build a superstructure
+14. Prototype and build a superstructure
 
-14. Done!
+15. Done!
