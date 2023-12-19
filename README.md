@@ -61,6 +61,9 @@ File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino
 You will also need the ESP32Servo library
 Sketch-->Include Library-->Type esp32 Servo and install it.
 
+And the Dynamixel XL330 Arduino Library
+Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
+
 10. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
 
 11. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
