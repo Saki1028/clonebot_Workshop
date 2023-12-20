@@ -17,33 +17,33 @@ A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/
 Download by click code--> download ZIP
 unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
-4. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+3. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
 # Steps:
-1. Download and install [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+## 1. Download and install [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
-2. Connect computer to motors. Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery. Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another) 
+## 2. Connect computer to motors. Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery. Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another) 
 
-3. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:
+## 3. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:
 - Baudrate to 115200 bps
 - ID 1 and 2 respectively
 - Control mode to PWM (not velocity or position).
 - Turn torque on and toggle the diagram to get it moving! You only have to do this once.
 
-4. Install the ESP32 Board (from espressif) in the Arduino IDE:
+## 4. Install the ESP32 Board (from espressif) in the Arduino IDE:
 
-tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
+- tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
+   (This may take a moment)
 
-This may take a moment
 
-5. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
+## 5. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
 
-select the board by going to:
-tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM
-then select the port:
-tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.
-then go to File-->Examples-->ESP32-->Camera-->CameraWebServer
-put in your wifi credentials
+- select the board by going to:
+-- tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM
+-- then select the port:
+-- tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.
+-- then go to File-->Examples-->ESP32-->Camera-->CameraWebServer
+-- put in your wifi credentials
 ```
 const char* ssid = "REPLACE_WITH_YOUR_SSID";
 const char* password = "REPLACE_WITH_YOUR_PASSWORD";
