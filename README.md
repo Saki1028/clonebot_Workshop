@@ -20,6 +20,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 4. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
 
 # Steps:
+## Part A: Dynamixel and motor setup
 1. Download and install [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)  
    [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)をインストールする  
 
@@ -34,6 +35,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 - Control mode to PWM (not velocity or position).
 - Turn torque on and toggle the diagram to get it moving! You only have to do this once.
 
+## Part B: ESP32 Board and webcam setup
 4. Install the ESP32 Board (from espressif) in the Arduino IDE:
 
 tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
@@ -72,7 +74,8 @@ Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino 
 7. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
 
 8. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
-  
+
+## Part C: ESP32 Board and webcam setup
 9. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
 
 10. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
