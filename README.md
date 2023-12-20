@@ -41,6 +41,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
 
 This may take a moment
+![plot](images/ArduinoIDE1.png)
 
 5. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
 
