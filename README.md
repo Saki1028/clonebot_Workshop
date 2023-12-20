@@ -90,7 +90,7 @@ Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino 
 
     
 ![img4](images/Controler.png)
-![img5](images/Controling menue1.png)
+![img5](images/Controlingmenue1.png)
 
 12. Prototype and build a superstructure
 
