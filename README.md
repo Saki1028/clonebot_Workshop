@@ -61,7 +61,7 @@ and comment out `//#define CAMERA_MODEL_ESP_EYE `
 hit the green arrow button on the left to upload the code to the microcontroller
 
 if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network.
-![plot](images/ArduinoIDE2.png)
+![plot1](images/ArduinoIDE2.png)
 
 6. Download this repo and open the folder Conebot_Control in the Arduno IDE
 
