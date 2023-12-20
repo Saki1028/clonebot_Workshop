@@ -61,6 +61,7 @@ and comment out `//#define CAMERA_MODEL_ESP_EYE `
 hit the green arrow button on the left to upload the code to the microcontroller
 
 if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network.
+![plot](images/ArduinoIDE2.png)
 
 6. Download this repo and open the folder Conebot_Control in the Arduno IDE
 
@@ -71,6 +72,7 @@ Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.
 
 And the Dynamixel XL330 Arduino Library
 Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
+![plot](images/ArduinoIDE4.png)
 
 7. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
 
@@ -80,7 +82,8 @@ Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino 
 9. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
 
 10. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
-
+![plot](images/Controler.png)
+![plot](images/Controling menue1.png)
 11. Prototype and build a superstructure
 
 12. Done!
