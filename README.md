@@ -1,6 +1,6 @@
 A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/ConeBot)
 
-# Parts:
+# Parts（必要部品）:
 * Computation: esp32-cam
 * Motor Programmer: ROBOTIS U2D2 part
 * Motors: DYNAMIXEL XL330-M077-T motor
@@ -11,7 +11,7 @@ A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/
 * caster balls
 
 
-# Dependency:
+# Dependency（準備）:
 1. [Arduino IDE](https://www.arduino.cc/en/software)
 2. Dr. Rei Lee's [package](https://github.com/rei039474/Dynamixel_XL330_Servo_Library) to control dynamixel motors (XL330 series)
 Download by click code--> download ZIP
@@ -30,6 +30,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    
 
 5. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:
+   Dynamixel Wizard（モーターの設定に使用するウェブサイト）を使ってモーターのIDとボーレートををスキャンする。
 - Baudrate to 115200 bps
 - ID 1 and 2 respectively
 - Control mode to PWM (not velocity or position).
@@ -37,6 +38,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
 ## Part B: ESP32 Board and webcam setup
 4. Install the ESP32 Board (from espressif) in the Arduino IDE:
+   ESP32 Board (from espressif)をインストールする
 
 tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
 
@@ -67,6 +69,8 @@ if you go to tools--> serial monitor it will print out an IP address you can go 
 ![img2](images/ArduinoIDE2.png)
 
 6. Download this repo and open the folder Conebot_Control in the Arduno IDE
+   ESP32Servoライブラリをダウンロードする
+   あらかじめローカルにダウンロードしておいたDynamixel XL330 Arduino Library.ZIPを取り込む
 
 File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino
 
@@ -80,8 +84,10 @@ Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino 
 ![img3](images/ArduinoIDE4.png)
 
 7. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
+   Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。
 
-8. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
+9. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
+    
 
 ## Part C: ESP32 Board and webcam setup
 9. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
@@ -92,6 +98,7 @@ Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino 
 ![img4](images/Controler.png)
 ![img5](images/Controler2.png)
 
-12. Prototype and build a superstructure
+12. Build your robots!
+    Brainstorm your ideas for your robots. Prototype and build a superstructure
 
-13. Done!
+14. Done!
