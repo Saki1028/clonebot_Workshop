@@ -37,16 +37,19 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 - Turn torque on and toggle the diagram to get it moving! You only have to do this once.
 
 ## Part B: ESP32 Board and webcam setup
-4. Install the ESP32 Board (from espressif) in the Arduino IDE:
-   ESP32 Board (from espressif)をインストールする
+1. Download and install [Arduino IDE](https://www.arduino.cc/en/software)  
+   [Arduino IDE](https://www.arduino.cc/en/software)をインストールし起動する
 
-tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
+2. Install the ESP32 Board (from espressif) in the Arduino IDE:
+   下図を参考に、ESP32 Board (from espressif)をインストールする
 
-This may take a moment
+   tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
+
+   This may take a moment（インストールに時間がかかる可能性があります）
 
 ![img1](images/ArduinoIDE1.png)
 
-5. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
+3. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
 
 select the board by going to:
 tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM
