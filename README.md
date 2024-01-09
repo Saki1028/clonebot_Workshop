@@ -41,9 +41,11 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    [Arduino IDE](https://www.arduino.cc/en/software)をインストールし起動する
 
 2. Install the ESP32 Board (from espressif) in the Arduino IDE:
-   下図を参考に、ESP32 Board (from espressif)をインストールする
+   下記を参考に、ESP32 Board (from espressif)をインストールする
 
-   > tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
+   > 1. Tools--> Board --> Boards Manager... (左の順にオプションを選択し、Boards Managerウィンドウを開く)
+   > 2. Type esp32 and select esp32 by Expressif　（「esp32」で検索し、「esp32 by Expressif」を選択する）
+   > 3. Install
 
    This may take a moment（インストールに時間がかかる可能性があります）
 
