@@ -100,5 +100,6 @@ Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino 
 
 12. Build your robots!
     Brainstorm your ideas for your robots. Prototype and build a superstructure
+    これでロボットの基礎は完成です。どのような機能をつけるか等自由にアイデアを出していただき、プロトタイプを作成してください。
 
 14. Done!
