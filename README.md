@@ -26,7 +26,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
 3. Connect computer to motors.  
    PCとモータを接続する。  
-   Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery. Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
+   > Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery. Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
    
 
 5. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:  
@@ -43,19 +43,21 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 2. Install the ESP32 Board (from espressif) in the Arduino IDE:
    下図を参考に、ESP32 Board (from espressif)をインストールする
 
-   tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
+   > tools--> board --> Boards Manager...--> type esp32 and select esp32 by Expressif--> install
 
    This may take a moment（インストールに時間がかかる可能性があります）
 
 ![img1](images/ArduinoIDE1.png)
 
 3. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
+   基板とUSBを用いて、ESP32カメラをPCに接続する。その後、下記に示す要領でカメラWebサーバの起動を行う。
 
 select the board by going to:
-tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM
+> tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM
 then select the port:
-tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.
-then go to File-->Examples-->ESP32-->Camera-->CameraWebServer
+> tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.
+then go to:
+> File-->Examples-->ESP32-->Camera-->CameraWebServer
 put in your wifi credentials
 ```
 const char* ssid = "REPLACE_WITH_YOUR_SSID";
@@ -75,13 +77,13 @@ if you go to tools--> serial monitor it will print out an IP address you can go 
    ESP32Servoライブラリをダウンロードする
    あらかじめローカルにダウンロードしておいたDynamixel XL330 Arduino Library.ZIPを取り込む
 
-File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino
+> File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino
 
 You will also need the ESP32Servo library
-Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.
+> Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.
 
 And the Dynamixel XL330 Arduino Library
-Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
+> Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
 
 
 ![img3](images/ArduinoIDE4.png)
