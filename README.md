@@ -104,6 +104,7 @@ And the Dynamixel XL330 Arduino Library
     
 ![img4](images/Controler.png)
 ![img5](images/Controler2.png)
+![img6](images/ESP32-CAM.png)
 
 12. Build your robots!
     Brainstorm your ideas for your robots. Prototype and build a superstructure
