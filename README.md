@@ -48,13 +48,13 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 2. Install the ESP32 Board (from espressif) in the Arduino IDE:
    下記を参考に、ESP32 Board (from espressif)をインストールする
 
-   > 1. Tools--> Board --> Boards Manager... (左の順にオプションを選択し、Boards Managerウィンドウを開く)
-   > 2. Type esp32 and select esp32 by Expressif　（「esp32」で検索し、「esp32 by Expressif」を選択する）
+   > 1. Tools--> Board --> Boards Manager... (左の順にオプションを選択し、Boards Managerウィンドウを開く)![BoardsManager](images/BoardsManager.png)
+   > 2. Type esp32 and select esp32 by Expressif　（「esp32」で検索し、「esp32 by Expressif」を選択する）![ESP32byEspressif](images/ESP32byEspressif.png)
    > 3. Install
 
    This may take a moment（インストールに時間がかかる可能性があります）
-
 ![img1](images/ArduinoIDE1.png)
+
 
 3. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
    基板とUSBを用いて、ESP32カメラをPCに接続する。その後、下記に示す要領でカメラWebサーバの起動を行う。
