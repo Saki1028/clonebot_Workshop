@@ -27,14 +27,14 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 1. Download and install [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)  
    [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)をインストールする  
 
-3. Connect computer to motors.  
+2. Connect computer to motors.  
    PCとモータを接続する。  
    > Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery.
    Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
    U2D2とDynamixelの入力・出力を正しく接続すること
    
 
-5. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:  
+3. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:  
    Dynamixel Wizardを起動する。そのソフトウェアでモーターのIDとボードレートをスキャンする。
 - Baudrate to 115200 bps（ボードレートを正しい値（おおよそ115200bps）に設定）
 - ID 1 and 2 respectively
@@ -87,14 +87,14 @@ put in your wifi credentials  (左の順にオプションを選択しスクリ�
 
 ![img3](images/ArduinoIDE4.png)
 
-8. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.  
-   先ほど開いたConebot_Control内のスクリプト`wifi_info.h'で任意のネットワーク名とパスワードを設定する。Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。
+8. In `wifi_info.h`, set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.  
+   先ほど開いたConebot_Control内のスクリプト`wifi_info.h`で任意のネットワーク名とパスワードを設定する。Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。
 
-9. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.  
-    スクリプトをアップロード(画面左上緑色のボタンを押下）し、先ほど設定した名前のネットワークにPCを接続する。そして、シリアルモニタに表示されているIPアドレスにアクセスする。
+9. Upload the code onto the board, connect to its network (SSID and password are in `wifi_info.h`), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.  
+    `Conebot_Control.ino`スクリプトをアップロード(画面左上緑色のボタンを押下）し、先ほど設定した名前のネットワークにPCを接続する。そして、シリアルモニタに表示されているIPアドレスにアクセスする。
     
 
-## Part C: ESP32 Board and webcam setup
+## Part C: Connect Dynamixel and ESP32 on Breadboard
 9. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
 
 10. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
