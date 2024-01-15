@@ -50,33 +50,29 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
    > 1. Tools--> Board --> Boards Manager... (左の順にオプションを選択し、Boards Managerウィンドウを開く)![BoardsManager](images/BoardsManager.png)
    > 2. Type esp32 and select esp32 by Expressif　（「esp32」で検索し、「esp32 by Expressif」を選択する）![ESP32byEspressif](images/ESP32byEspressif.png)
-   > 3. Install
-
-   This may take a moment（インストールに時間がかかる可能性があります）
-![img1](images/ArduinoIDE1.png)
+   > 3. Install(This may take a moment). (インストールに時間がかかる可能性があります）![img1](images/ArduinoIDE1.png)
 
 
 3. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
    基板とUSBを用いて、ESP32カメラをPCに接続する。その後、下記に示す要領でカメラWebサーバの起動を行う。
 
-select the board by going to:
-> tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM
-then select the port:
-> tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.
-then go to:
-> File-->Examples-->ESP32-->Camera-->CameraWebServer
-put in your wifi credentials
+> 1. Select the board by going to: tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM  (左の順にオプションを選択し、AI Thinker ESP32-CAMを開く) ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
+> 2. Then select the port:tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.  (左の順にオプションを選択し、指定のポート経由でESP32へ接続を行う) 　![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
+> 3. then go to:File-->Examples-->ESP32-->Camera-->CameraWebServer
+put in your wifi credentials  (左の順にオプションを選択しスクリプトを開く。下記を参考にWi-Fi情報を更新する)
 ```
 const char* ssid = "REPLACE_WITH_YOUR_SSID";
 const char* password = "REPLACE_WITH_YOUR_PASSWORD";
 ```
-Uncomment this line `#define CAMERA_MODEL_AI_THINKER ` 
-and comment out `//#define CAMERA_MODEL_ESP_EYE `
+Uncomment this line（この行の行頭の"//"を削除） `#define CAMERA_MODEL_AI_THINKER ` 
+and comment out （この行の行頭に"//" を追加）`//#define CAMERA_MODEL_ESP_EYE `
+![CameraWebServer1](images/CameraWebServer1.png)
 
-hit the green arrow button on the left to upload the code to the microcontroller
+> 4. hit the green arrow button on the left to upload the code to the microcontroller  (画面左上にある緑路の矢印を押下し、スクリプトをデバイスにアップロードする) ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
 
-if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network.
-
+> 5. if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network. (左の順にオプションを選択し、シリアルモニタ画面を表示させる。そこにIPアドレスが表示されるので、ブラウザ経由でそこにアクセスを行う)
+ ![SerialMonitor](images/SerialMonitor.png)
+ ![IPaddress](images/IPaddress.png)
 
 ![img2](images/ArduinoIDE2.png)
 
