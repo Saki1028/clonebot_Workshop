@@ -60,41 +60,38 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 > 2. Then select the port:tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.  (左の順にオプションを選択し、指定のポート経由でESP32へ接続を行う) 　![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
 > 3. then go to:File-->Examples-->ESP32-->Camera-->CameraWebServer
 put in your wifi credentials  (左の順にオプションを選択しスクリプトを開く。下記を参考にWi-Fi情報を更新する)
-```
-const char* ssid = "REPLACE_WITH_YOUR_SSID";
-const char* password = "REPLACE_WITH_YOUR_PASSWORD";
-```
-Uncomment this line（この行の行頭の"//"を削除） `#define CAMERA_MODEL_AI_THINKER ` 
-and comment out （この行の行頭に"//" を追加）`//#define CAMERA_MODEL_ESP_EYE `
-![CameraWebServer1](images/CameraWebServer1.png)
+   ```
+   const char* ssid = "REPLACE_WITH_YOUR_SSID";
+   const char* password = "REPLACE_WITH_YOUR_PASSWORD";
+   ```
+   Uncomment this line（この行の行頭の"//"を削除） `#define CAMERA_MODEL_AI_THINKER ` 
+   and comment out （この行の行頭に"//" を追加）`//#define CAMERA_MODEL_ESP_EYE `
+   ![CameraWebServer1](images/CameraWebServer1.png)
 
 > 4. hit the green arrow button on the left to upload the code to the microcontroller  (画面左上にある緑路の矢印を押下し、スクリプトをデバイスにアップロードする) ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
 
 > 5. if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network. (左の順にオプションを選択し、シリアルモニタ画面を表示させる。そこにIPアドレスが表示されるので、ブラウザ経由でそこにアクセスを行う)
- ![SerialMonitor](images/SerialMonitor.png)
- ![IPaddress](images/IPaddress.png)
+ ![SerialMonitor](images/SerialMonitor.png)  ![IPaddress](images/IPaddress.png)
 
 ![img2](images/ArduinoIDE2.png)
 
 6. Download this repo and open the folder Conebot_Control in the Arduno IDE
-   ESP32Servoライブラリをダウンロードする
-   あらかじめローカルにダウンロードしておいたDynamixel XL330 Arduino Library.ZIPを取り込む
+   Conebot_Controlフォルダをローカルにダウンロードし、Arduno IDEで開く
+   > File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino（左の順にオプションを選択し、ファイルを取り込む）
 
-> File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino
-
-You will also need the ESP32Servo library
-> Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.
-
-And the Dynamixel XL330 Arduino Library
-> Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
+7. You will also need the ESP32Servo library and the Dynamixel XL330 Arduino Library
+   下記の方法で、ESP32ServoライブラリとDynamixel XL330ライブラリをダウンロードする 
+   > ESP32Servo: Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.
+   > Dynamixel XL330 Arduino Library: Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
 
 
 ![img3](images/ArduinoIDE4.png)
 
-7. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
-   Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。
+8. In `wifi_info.h', set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.  
+   先ほど開いたConebot_Control内のスクリプト`wifi_info.h'で任意のネットワーク名とパスワードを設定する。Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。
 
-9. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.
+9. Upload the code onto the board, connect to its network (SSID and password are in "wifi_info.h"), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.  
+    スクリプトをアップロード(画面左上緑色のボタンを押下）し、先ほど設定した名前のネットワークにPCを接続する。そして、シリアルモニタに表示されているIPアドレスにアクセスする。
     
 
 ## Part C: ESP32 Board and webcam setup
