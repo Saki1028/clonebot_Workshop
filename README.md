@@ -81,7 +81,7 @@ put in your wifi credentials  (左の順にオプションを選択しスクリ�
 
 7. You will also need the ESP32Servo library and the Dynamixel XL330 Arduino Library
    下記の方法で、ESP32ServoライブラリとDynamixel XL330ライブラリをダウンロードする 
-   > ESP32Servo: Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.
+   > ESP32Servo: Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.  
    > Dynamixel XL330 Arduino Library: Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
 
 
