@@ -17,7 +17,10 @@ A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/
 Download by click code--> download ZIP
 unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
-4. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+3. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+4. Please refer to the following repo for the XL330 Servo library under Arduino IDE:  
+[rei039474/Dynamixel_XL330_Servo_Library](https://github.com/rei039474/Dynamixel_XL330_Servo_Library)
+
 
 # Steps:
 ## Part A: Dynamixel and motor setup
@@ -26,7 +29,9 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
 3. Connect computer to motors.  
    PCとモータを接続する。  
-   > Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery. Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
+   > Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery.
+   Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
+   U2D2とDynamixelの入力・出力を正しく接続すること
    
 
 5. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:  
