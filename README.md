@@ -71,41 +71,35 @@ put in your wifi credentials  (左の順にオプションを選択しスクリ�
 > 4. hit the green arrow button on the left to upload the code to the microcontroller  (画面左上にある緑路の矢印を押下し、スクリプトをデバイスにアップロードする) ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
 
 > 5. if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network. (左の順にオプションを選択し、シリアルモニタ画面を表示させる。そこにIPアドレスが表示されるので、ブラウザ経由でそこにアクセスを行う)
- ![SerialMonitor](images/SerialMonitor.png)  ![IPaddress](images/IPaddress.png)
+ ![SerialMonitor](images/SerialMonitor.png)  ![IPaddress](images/IPaddress.png) ![img2](images/ArduinoIDE2.png)
+この画面が表示されたらOK！![img2](images/CameraWebPage.png)
 
-![img2](images/ArduinoIDE2.png)
-
-6. Download this repo and open the folder Conebot_Control in the Arduno IDE
+4. コントロールボタンを表示させる
+   > 1. Download this repo and open the folder Conebot_Control in the Arduno IDE
    Conebot_Controlフォルダをローカルにダウンロードし、Arduno IDEで開く
-   > File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino（左の順にオプションを選択し、ファイルを取り込む）
-
-7. You will also need the ESP32Servo library and the Dynamixel XL330 Arduino Library
-   下記の方法で、ESP32ServoライブラリとDynamixel XL330ライブラリをダウンロードする 
-   > ESP32Servo: Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.  
-   > Dynamixel XL330 Arduino Library: Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier
-
-
-![img3](images/ArduinoIDE4.png)
-
-8. In `wifi_info.h`, set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.  
-   先ほど開いたConebot_Control内のスクリプト`wifi_info.h`で任意のネットワーク名とパスワードを設定する。Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。
-
-9. Upload the code onto the board, connect to its network (SSID and password are in `wifi_info.h`), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.  
+   >> File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino（左の順にオプションを選択し、ファイルを取り込む）
+   > 2. You will also need the ESP32Servo library and the Dynamixel XL330 Arduino Library
+   > 下記の方法で、ESP32ServoライブラリとDynamixel XL330ライブラリをダウンロードする 
+   >> ESP32Servo: Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.  
+   >> Dynamixel XL330 Arduino Library: Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier ![img3](images/ArduinoIDE4.png)
+   > 3. In `wifi_info.h`, set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
+   > 先ほど開いたConebot_Control内のスクリプト`wifi_info.h`で任意のネットワーク名とパスワードを設定する。Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。
+   > 4. Upload the code onto the board, connect to its network (SSID and password are in `wifi_info.h`), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.  
     `Conebot_Control.ino`スクリプトをアップロード(画面左上緑色のボタンを押下）し、先ほど設定した名前のネットワークにPCを接続する。そして、シリアルモニタに表示されているIPアドレスにアクセスする。
     
 
 ## Part C: Connect Dynamixel and ESP32 on Breadboard
-9. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
+1. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
 
-10. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
+2. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
 
     
 ![img4](images/Controler.png)
 ![img5](images/Controler2.png)
 ![img6](images/ESP32-CAM.png)
 
-12. Build your robots!
+3. Build your robots!
     Brainstorm your ideas for your robots. Prototype and build a superstructure
     これでロボットの基礎は完成です。どのような機能をつけるか等自由にアイデアを出していただき、プロトタイプを作成してください。
 
-14. Done!
+4. Done!
