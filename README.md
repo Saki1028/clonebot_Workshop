@@ -35,11 +35,11 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    
 
 3. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:  
-   Dynamixel Wizardを起動する。そのソフトウェアでモーターのIDとボードレートをスキャンする。
-   1. Baudrate to 115200 bps（ボードレートを115200bpsに設定）![BaudrateSetting](images/BaudrateSetting.png)
-   2. ID 1 and 2 respectively（それぞれのモータにIDを設定）![Scanning](images/Scanning.png)
-   3. Control mode to PWM (not velocity or position).
-   4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
+   Dynamixel Wizardを起動し、モーターをスキャンする。モーターが発見されたら下記の要領でボードレートとIDの設定変更を行う。
+   > 1. Baudrate to 115200 bps（ボードレートを115200bpsに設定）![BaudrateSetting](images/BaudrateSetting.png)
+   > 2. ID 1 and 2 respectively（それぞれのモータにIDを設定）![scanning](images/scanning.png)
+   > 3. Control mode to PWM (not velocity or position).
+   > 4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
 
 ## Part B: ESP32 Board and webcam setup
 1. Download and install [Arduino IDE](https://www.arduino.cc/en/software)  
@@ -90,8 +90,10 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
 ## Part C: Connect Dynamixel and ESP32 on Breadboard
 1. Set up the breadboard: hook up servo, ESP32 cam, battery, and motors. (Schematic included)
+   下図のようにブレッドボードを設定し、ESP32カメラ、バッテリー、モータをワイヤにて繋げる ![Dynamixelsetup](images/Dynamixelsetup.webp)
 
 2. Again, connect to the ESP32's network, and go to the same IP address. You should be able to see the video stream and control all of the motors!
+   再びESP32カメラをネットワークに接続し、先ほどと同じIPアドレスにブラウザ経由でアクセスする。カメラが動いており、コントローラでモータを動かせたら準備完了！
 
     
 ![Controler](images/Controler.png)
