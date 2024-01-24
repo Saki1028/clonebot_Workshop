@@ -33,7 +33,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
    
    ※U2D2とDynamixelの入力・出力を正しく接続すること
-   > ![Dynamixelsetup](images/Dynamixelsetup.webp)
+   > ![Dynamixelsetup](images/Dynamixelsetup.jpg)
    
 
 3. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:  
