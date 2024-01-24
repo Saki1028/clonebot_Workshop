@@ -62,16 +62,25 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    > 1. Select the board by going to: tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM  (左の順にオプションを選択し、AI Thinker ESP32-CAMを開く) ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
    >
    > 右記のとおりカメラの設定画面を開く「Tools」→「Boards」→「ESP32 Arduino」→「AI Thinker ESP32-CAM」
-   > 2. Then select the port:tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.  (左の順にオプションを選択し、指定のポート経由でESP32へ接続を行う)
+   >
+   >
+   >  2. Then select the port:tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.  (左の順にオプションを選択し、指定のポート経由でESP32へ接続を行う)
    >
    > 再度ToolsタブからカメラがどのUSBポートで接続されているのか設定を行う。「Tools」→「Port」→ここで自分が接続しているUSBポートを選択し、Ctr ＋　Sで保存しておく。例：「/dev/usb*****」または「COM***」
    > どのポートに接続しているのか不明な際はコントロールパネルからデバイスマネージャーを開き、確認する。
    > 
    > 3. ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
+   >
    > 4. then go to:File-->Examples-->ESP32-->Camera-->CameraWebServer
    put in your wifi credentials  (左の順にオプションを選択しスクリプトを開く。下記を参考にWi-Fi情報を更新する)
 　　　　右記のとおり、カメラのWebサーバーを設定するスクリプトを開く。「File」→「Examples」→「ESP32」→「Camera」→「CameraWenServer」
-const char* ssid = "
+
+const char* ssid = "下記をコピーして挿入";
+   >   ```
+   >   REPLACE_WITH_YOUR_SSID
+   >   ```
+
+const char* password = "下記をコピーして挿入";
    >   ```
    >   REPLACE_WITH_YOUR_SSID
    >   ```
