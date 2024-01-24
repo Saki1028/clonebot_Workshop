@@ -86,10 +86,10 @@ const char* password = "下記をコピーして挿入";
    >   ```
 
 
-   >   ```
-   >   const char* ssid = "REPLACE_WITH_YOUR_SSID";
-   >   const char* password = "REPLACE_WITH_YOUR_PASSWORD";
-   >   ```
+   //>   ```
+   //>   const char* ssid = "REPLACE_WITH_YOUR_SSID";
+   //>   const char* password = "REPLACE_WITH_YOUR_PASSWORD";
+   //>   ```
    >   Uncomment this line（この行の行頭の"//"を削除） `#define CAMERA_MODEL_AI_THINKER ` 
    >   and comment out （この行の行頭に"//" を追加）`//#define CAMERA_MODEL_ESP_EYE `
    >   ![CameraWebServer1](images/CameraWebServer1.png)
