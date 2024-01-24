@@ -40,15 +40,20 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    パソコン上で手順１でインストールしておいたDynamixel Wizardのアプリを起動し、Dynamizelモーターでスキャンする。モーターが発見されたら下記の要領でボードレートとIDの設定変更を行う。
    
    > 1. Baudrate to 115200 bps
-   > 2. ボードレートを115200bpsに設定 ![BaudrateSetting](images/BaudrateSetting.png)
-   > 3. ID 1 and 2 respectively
+   >
+   >    ボードレートを115200bpsに設定 ![BaudrateSetting](images/BaudrateSetting.png)
+   > 2. ID 1 and 2 respectively
+   >
    >    それぞれのモータにIDを設定
-   >　　※「Torque」がオフなことを確認してから、IDの設定変更を行う
+   >　　
+   　　　※「Torque」がオフなことを確認してから、IDの設定変更を行う
    >    ![scanning](images/scanning.png)
-   > 5. Control mode to PWM (not velocity or position).
+   > 3. Control mode to PWM (not velocity or position).
+   >
    >    「Control mode」が「Velocity」や「Position」になっている場合は「PWM」に変更する。
-   > 6. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
-   >　　　「Torque」をオンにして、赤い丸いボタンを左右にドラッグすることで、パソコンからモーターが操作可能か確認する。
+   > 4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
+   >　　
+   　　　「Torque」をオンにして、赤い丸いボタンを左右にドラッグすることで、パソコンからモーターが操作可能か確認する。
    > 
    ※スキャンできない場合は、Options（歯車マーク）をクリックし、「Select port to scan」を「USB Serial Port」に変更する。
 
