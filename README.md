@@ -41,6 +41,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    > 2. ID 1 and 2 respectively（それぞれのモータにIDを設定）![scanning](images/scanning.png)
    > 3. Control mode to PWM (not velocity or position).
    > 4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
+   >    ※スキャンできない場合は、Options（歯車マーク）をクリックし、「Select port to scan」を「USB Serial Port」に変更する。
 
 ## Part B: ESP32 Board and webcam setup
 1. Download and install [Arduino IDE](https://www.arduino.cc/en/software)  
