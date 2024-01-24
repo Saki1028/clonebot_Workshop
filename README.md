@@ -80,7 +80,7 @@ const char* ssid = "下記をコピーして挿入";
    >   REPLACE_WITH_YOUR_SSID
    >   ```
 
-const char* password = "下記をコピーして挿入";
+const char* password = "'下記をコピーして挿入'";
    >   ```
    >   REPLACE_WITH_YOUR_SSID
    >   ```
