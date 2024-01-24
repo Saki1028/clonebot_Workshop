@@ -31,17 +31,25 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    PCとモータとバッテリーを接続する。  
    > Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery.
    Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
-   U2D2とDynamixelの入力・出力を正しく接続すること
+   
+   ※U2D2とDynamixelの入力・出力を正しく接続すること
    > ![Dynamixelsetup](images/Dynamixelsetup.webp)
    
 
 3. In the Dynamixel Wizard, scan the USB port for Baudrate 57600 to find the motors. After the motor is found, make sure torque is off, then change settings for both:  
-   Dynamixel Wizardを起動し、モーターをスキャンする。モーターが発見されたら下記の要領でボードレートとIDの設定変更を行う。
-   > 1. Baudrate to 115200 bps（ボードレートを115200bpsに設定）![BaudrateSetting](images/BaudrateSetting.png)
-   > 2. ID 1 and 2 respectively（それぞれのモータにIDを設定）![scanning](images/scanning.png)
-   > 3. Control mode to PWM (not velocity or position).
-   > 4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
-   >  
+   パソコン上で手順１でインストールしておいたDynamixel Wizardのアプリを起動し、Dynamizelモーターでスキャンする。モーターが発見されたら下記の要領でボードレートとIDの設定変更を行う。
+   
+   > 1. Baudrate to 115200 bps
+   > 2. ボードレートを115200bpsに設定 ![BaudrateSetting](images/BaudrateSetting.png)
+   > 3. ID 1 and 2 respectively
+   >    それぞれのモータにIDを設定
+   >　　※「Torque」がオフなことを確認してから、IDの設定変更を行う
+   >    ![scanning](images/scanning.png)
+   > 5. Control mode to PWM (not velocity or position).
+   >    「Control mode」が「Velocity」や「Position」になっている場合は「PWM」に変更する。
+   > 6. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
+   >　　　「Torque」をオンにして、赤い丸いボタンを左右にドラッグすることで、パソコンからモーターが操作可能か確認する。
+   > 
    ※スキャンできない場合は、Options（歯車マーク）をクリックし、「Select port to scan」を「USB Serial Port」に変更する。
 
 ## Part B: ESP32 Board and webcam setup
@@ -62,20 +70,23 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
    > 1. Select the board by going to: tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM  (左の順にオプションを選択し、AI Thinker ESP32-CAMを開く) ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
    >
-   > 右記のとおりカメラの設定画面を開く「Tools」→「Boards」→「ESP32 Arduino」→「AI Thinker ESP32-CAM」
+   > 　　右記のとおりカメラの設定画面を開く「Tools」→「Boards」→「ESP32 Arduino」→「AI Thinker ESP32-CAM」
    >
    >
    >  2. Then select the port:tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.  (左の順にオプションを選択し、指定のポート経由でESP32へ接続を行う)
    >
-   > 再度ToolsタブからカメラがどのUSBポートで接続されているのか設定を行う。「Tools」→「Port」→ここで自分が接続しているUSBポートを選択し、Ctr ＋　Sで保存しておく。
-   > 例：「/dev/usb*****」または「COM***」
-   >もし、どのポートに接続しているのか不明な際はコントロールパネルからデバイスマネージャーを開き、確認する。
+   >　　　 再度ToolsタブからカメラがどのUSBポートで接続されているのか設定を行う。「Tools」→「Port」→ここで自分が接続しているUSBポートを選択し、Ctr ＋　Sで保存しておく。
+   >
+   > 　　　例：「/dev/usb*****」または「COM***」
+   >
+   > 　　　もし、どのポートに接続しているのか不明な際はコントロールパネルからデバイスマネージャーを開き、確認する。
    > 
    > 3. ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
    >
    > 4. then go to:File-->Examples-->ESP32-->Camera-->CameraWebServer
    put in your wifi credentials  (左の順にオプションを選択しスクリプトを開く。下記を参考にWi-Fi情報を更新する)
-　　　　右記のとおり、カメラのWebサーバーを設定するスクリプトを開く。「File」→「Examples」→「ESP32」→「Camera」→「CameraWenServer」
+　　　
+    　　　右記のとおり、カメラのWebサーバーを設定するスクリプトを開く。「File」→「Examples」→「ESP32」→「Camera」→「CameraWenServer」
 
 const char* ssid = "下記をコピーして挿入";
    >   ```
