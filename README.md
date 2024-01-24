@@ -103,9 +103,11 @@ const char* password = "'下記をコピーして挿入'";
 
    >   ![CameraWebServer1](images/CameraWebServer1.png)
    > 5. hit the green arrow button on the left to upload the code to the microcontroller
-> 　　　画面左上にある緑路の矢印を押下し、スクリプトをデバイスにアップロードする
+>
+> 　画面左上にある緑路の矢印を押下し、スクリプトをデバイスにアップロードする
 >  ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
-   > 6. if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network. (左の順にオプションを選択し、シリアルモニタ画面を表示させる。そこにIPアドレスが表示されるので、ブラウザ経由でそこにアクセスを行う)
+   > 6. if you go to tools--> serial monitor it will print out an IP address you can go to in a browser from a computer on the same network.
+        左の順にオプションを選択し、シリアルモニタ画面を表示させる。そこにIPアドレスが表示されるので、ブラウザ経由でそこにアクセスを行う。
     ![SerialMonitor](images/SerialMonitor.png)  ![IPaddress](images/IPaddress.png) ![ArduinoIDE2](images/ArduinoIDE2.png)  
    この画面が表示されたらOK！  ![CameraWebPage](images/CameraWebPage.png)
 
