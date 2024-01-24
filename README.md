@@ -57,6 +57,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
 
 3. Using the board and a microUSB, connect to ESP32 cam, flash and run a bit of sample code (try [CameraWebServer](https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/)).
+   
    ESP32カメラとUSBケーブルをノートパソコンにPCに接続する。その後、下記に示す要領でカメラWebサーバの起動を行う。
 
    > 1. Select the board by going to: tools-->boards> ESP32 Arduino --> select AI Thinker ESP32-CAM  (左の順にオプションを選択し、AI Thinker ESP32-CAMを開く) ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
