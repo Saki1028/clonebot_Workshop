@@ -28,11 +28,11 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)をインストールする  
 
 2. Connect computer to motors.  
-   PCとモータとバッテリーを接続する。  
+   PCとモータとバッテリーを写真の通り接続する。  
    > Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery.
    Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
    
-   ※U2D2とDynamixelの入力・出力を正しく接続すること
+   ※U2D2とDynamixelの入力・出力を正しく接続すること。特に電源のピンを間違えないように接続する。
    > ![Dynamixelsetup](images/Dynamixelsetup.jpg)
    
 
