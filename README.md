@@ -67,8 +67,9 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    >
    >  2. Then select the port:tools--> port--> there should be something like /dev/usb***** on mac or COM*** on Windows.  (左の順にオプションを選択し、指定のポート経由でESP32へ接続を行う)
    >
-   > 再度ToolsタブからカメラがどのUSBポートで接続されているのか設定を行う。「Tools」→「Port」→ここで自分が接続しているUSBポートを選択し、Ctr ＋　Sで保存しておく。例：「/dev/usb*****」または「COM***」
-   > どのポートに接続しているのか不明な際はコントロールパネルからデバイスマネージャーを開き、確認する。
+   > 再度ToolsタブからカメラがどのUSBポートで接続されているのか設定を行う。「Tools」→「Port」→ここで自分が接続しているUSBポートを選択し、Ctr ＋　Sで保存しておく。
+   > 例：「/dev/usb*****」または「COM***」
+   >もし、どのポートに接続しているのか不明な際はコントロールパネルからデバイスマネージャーを開き、確認する。
    > 
    > 3. ![AI Thinker ESP32-CAM](images/AI Thinker ESP32-CAM.png)
    >
@@ -83,7 +84,7 @@ const char* ssid = "下記をコピーして挿入";
 
 const char* password = "'下記をコピーして挿入'";
    >   ```
-   >   REPLACE_WITH_YOUR_SSID
+   >   REPLACE_WITH_YOUR_PASSWORD
    >   ```
 >
 
