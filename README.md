@@ -54,7 +54,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    > 4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
    >　　
    >
-   > 「Torque」をオンにして、赤い丸いボタンを左右にドラッグすることで、パソコンからモーターが操作可能か確認する。
+   >     「Torque」をオンにして、赤い丸いボタンを左右にドラッグすることで、パソコンからモーターが操作可能か確認する。
    > 
    ※スキャンできない場合は、Options（歯車マーク）をクリックし、「Select port to scan」を「USB Serial Port」に変更する。
 
