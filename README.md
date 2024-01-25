@@ -54,10 +54,10 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    >
    > ※「Torque」がオフなことを確認してから、IDの設定変更を行う
    >    ![scanning](images/scanning.png)
-   > 3. Control mode to PWM (not velocity or position).
-   >
-   >    「Control mode」が「Velocity」や「Position」になっている場合は「PWM」に変更する。
-   >
+    3. Control mode to PWM (not velocity or position).
+   
+       「Control mode」が「Velocity」や「Position」になっている場合は「PWM」に変更する。
+   
     4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
    　　
    
