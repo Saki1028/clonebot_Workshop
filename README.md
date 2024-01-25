@@ -57,11 +57,12 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    > 3. Control mode to PWM (not velocity or position).
    >
    >    「Control mode」が「Velocity」や「Position」になっている場合は「PWM」に変更する。
-   > 4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
-   >　　
    >
-   >     「Torque」をオンにして、赤い丸いボタンを左右にドラッグすることで、パソコンからモーターが操作可能か確認する。
-   > 
+    4. Turn torque on and toggle the diagram to get it moving! You only have to do this once.
+   　　
+   
+        「Torque」をオンにして、赤い丸いボタンを左右にドラッグすることで、パソコンからモーターが操作可能か確認する。
+    
    ※スキャンできない場合は、Options（歯車マーク）をクリックし、「Select port to scan」を「USB Serial Port」に変更する。
 
 ## Part B: ESP32 Board and webcam setup
