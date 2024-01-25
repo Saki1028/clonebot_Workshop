@@ -12,13 +12,18 @@ A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/
 
 
 # Dependency（準備）:
-1. [Arduino IDE](https://www.arduino.cc/en/software)
+必要なファイル：
+
+1. [Arduino IDE](https://www.arduino.cc/en/software)　をインストールする。
 2. Dr. Rei Lee's [package](https://github.com/rei039474/Dynamixel_XL330_Servo_Library) to control dynamixel motors (XL330 series)
 Download by click code--> download ZIP
 unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
-3. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
-4. Please refer to the following repo for the XL330 Servo library under Arduino IDE:  
+Dr.Rei Leeさんが作成したモーターの操作するためのプログラムが入ったZipファイルをダウンロードし、解凍させてから下記の場所に保存する。
+
+`~/Documents/Arduino/libraries/`
+4. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)　をダウンロードする。
+5. Please refer to the following repo for the XL330 Servo library under Arduino IDE:  
 [rei039474/Dynamixel_XL330_Servo_Library](https://github.com/rei039474/Dynamixel_XL330_Servo_Library)
 
 
@@ -27,7 +32,7 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 1. Download and install [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)  
    [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)をインストールする  
 
-2. Connect computer to motors.  
+2. Connect the computer to the motors.  
    PCとモータとバッテリーを写真の通り接続する。  
    > Laptop USB--> U2D2 microUSB-->right side of motor 1--> left side of motor 1--> right side of motor 2--> left side of the motor --> battery.
    Check the pinout of the U2D2 and dynamixels to make sure you are connecting them properly (VDD, GND, and Data, should connect to one another)
@@ -46,7 +51,8 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    >
    >    それぞれのモータにIDを設定
    >　　
-   　　　※「Torque」がオフなことを確認してから、IDの設定変更を行う
+   >
+   > ※「Torque」がオフなことを確認してから、IDの設定変更を行う
    >    ![scanning](images/scanning.png)
    > 3. Control mode to PWM (not velocity or position).
    >
@@ -102,20 +108,9 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 　　　
     　　　右記のとおり、カメラのWebサーバーを設定するスクリプトを開く。「File」→「Examples」→「ESP32」→「Camera」→「CameraWenServer」
 
-const char* ssid = "下記をコピーして挿入";
    >   ```
-   >   REPLACE_WITH_YOUR_SSID
-   >   ```
-
-const char* password = "'下記をコピーして挿入'";
-   >   ```
-   >   REPLACE_WITH_YOUR_PASSWORD
-   >   ```
->
-
-   >   ```
-   >   const char* ssid = "REPLACE_WITH_YOUR_SSID";
-   >   const char* password = "REPLACE_WITH_YOUR_PASSWORD";
+   >   const char* ssid = "WifiのID";
+   >   const char* password = "パスワード";
    >   ```
 >
 > 
@@ -135,19 +130,26 @@ const char* password = "'下記をコピーして挿入'";
         左の順にオプションを選択し、シリアルモニタ画面を表示させる。そこにIPアドレスが表示されるので、ブラウザ経由でそこにアクセスを行う。  
    > 　　※文字化けが発生した場合はBaudrateの値が115200BPSになっているかを確認。なっていない場合は115200BPSに修正すること。
     ![SerialMonitor](images/SerialMonitor.png)  ![IPaddress](images/IPaddress.png) ![ArduinoIDE2](images/ArduinoIDE2.png)  
-   この画面が表示されたらOK！  ![CameraWebPage](images/CameraWebPage.png)
+   この画面が表示されたらOK！Broadcastをオンにしてカメラが起動するか確認する。
+> 
+>![CameraWebPage](images/CameraWebPage.png)
 
 4. コントロールボタンを表示させる
    > 1. Download this repo and open the folder Conebot_Control in the Arduno IDE
-   Conebot_Controlフォルダをローカルにダウンロードし、Arduno IDEで開く
+   >Conebot_Controlフォルダを下記の要領でArduno IDEで開く。
+   >
+   > 
+
    >    File-->Open-->Conebot-main-->Conebot_Control-->Conebot_Control.ino（左の順にオプションを選択し、ファイルを取り込む）
-   > 2. You will also need the ESP32Servo library and the Dynamixel XL330 Arduino Library
+   > 3. You will also need the ESP32Servo library and the Dynamixel XL330 Arduino Library
+   >    
    > 下記の方法で、ESP32ServoライブラリとDynamixel XL330ライブラリをダウンロードする 
-   >    ESP32Servo: Sketch-->Include Library-->Library Manager-->Type ESP32Servo and install it.  
+   >    ESP32Servo: 「Sketch」->I「nclude Library」->「Library Manager」-> 「ESP32Servo」と検索し、そのファイルをダウンロードする。  
    >    Dynamixel XL330 Arduino Library: Sketch-->Include Library--> Add .ZIP Library and select Dynamixel XL330 Arduino Library.ZIP that we downloaded earlier ![ArduinoIDE4](images/ArduinoIDE4.png)
-   > 3. In `wifi_info.h`, set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
+   > 5. In `wifi_info.h`, set it to "WiFi Option 2: Set up your own Wi-Fi network access point with SSID and password" by commenting out the first option.
+   >    
    > 先ほど開いたConebot_Control内のスクリプト`wifi_info.h`で任意のネットワーク名とパスワードを設定する。Wifi設定で、自分で設定したデバイスの名前とパスワードを選択し、接続する。  ![wifiinfo](images/wifiinfo.png)
-   > 4. Upload the code onto the board, connect to its network (SSID and password are in `wifi_info.h`), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.  
+   > 7. Upload the code onto the board, connect to its network (SSID and password are in `wifi_info.h`), and visit the IP address that it spits out in the Serial monitor. It should show you live video feed, as well as a button display! Try turning the LED on and off.  
     `Conebot_Control.ino`スクリプトをアップロード(画面左上緑色のボタンを押下）し、先ほど設定した名前のネットワークにPCを接続する。そして、シリアルモニタに表示されているIPアドレスにアクセスする。![CameraAndController](images/CameraAndController.png)
     
 
