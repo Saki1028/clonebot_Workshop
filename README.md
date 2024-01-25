@@ -19,8 +19,8 @@ A slight modification from Dr. Rei Lee's [Conebot](https://github.com/rei039474/
 Download by click code--> download ZIP
 unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
 
- 　　　　　 Dr.Rei Leeさんが作成したモーターの操作するためのプログラムが入ったZipファイルをダウンロードし、解凍させてから下記の場所に保存する。
-  　　　　　`~/Documents/Arduino/libraries/`
+ 　 Dr.Rei Leeさんが作成したモーターの操作するためのプログラムが入ったZipファイルをダウンロードし、解凍させてから下記の場所に保存する。
+  　`~/Documents/Arduino/libraries/`
 
 4. [Dynamixel Wizard](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)　をダウンロードする。
 5. Please refer to the following repo for the XL330 Servo library under Arduino IDE:  
