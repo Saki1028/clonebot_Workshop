@@ -115,11 +115,11 @@ unzip ait and move the directoriy to `~/Documents/Arduino/libraries/`
    >   ```
 >
 > 
-   >   Uncomment this line（この行の行頭の"//"を削除） `#define CAMERA_MODEL_AI_THINKER `
+   >   Uncomment this line（この行の行頭の"//"を削除） `#define CAMERA_MODEL_AI_THINKER 
 >
    >   and comment out （この行の行頭に"//" を追加）`//#define CAMERA_MODEL_ESP_EYE
 >
->      この行の行頭の"//"を削除し右記のように書き換える `#define CAMERA_MODEL_AI_THINKER `
+>      この行の行頭の"//"を削除し右記のように書き換える `#define CAMERA_MODEL_AI_THINKER
 >
 >      この行の行頭に"//"を追加し右記のように書き換える`//#define CAMERA_MODEL_ESP_EYE `
 
